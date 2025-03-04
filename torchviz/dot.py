@@ -143,7 +143,7 @@ def make_dot(var, params=None, show_attrs=False, show_saved=False, max_attr_char
                 if t is not None:
                     t_name = get_var_name(t)
                 else:
-                    t_name = 'None'
+                    t_name = '_no_name'
                 dot.node(str(id(t)), t_name, fillcolor='orange')
 
 
