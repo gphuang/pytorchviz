@@ -140,7 +140,11 @@ def make_dot(var, params=None, show_attrs=False, show_saved=False, max_attr_char
             for t in fn.saved_tensors:
                 seen.add(t)
                 dot.edge(str(id(t)), str(id(fn)), dir="none")
-                dot.node(str(id(t)), get_var_name(t), fillcolor='orange')
+                if (t):
+                    t_name = get_var_name(t)
+                else:
+                    t_name = 'None'
+                dot.node(str(id(t)), t_name, fillcolor='orange')
 
 
     def add_base_tensor(var, color='darkolivegreen1'):
