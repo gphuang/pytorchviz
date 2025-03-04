@@ -140,7 +140,7 @@ def make_dot(var, params=None, show_attrs=False, show_saved=False, max_attr_char
             for t in fn.saved_tensors:
                 seen.add(t)
                 dot.edge(str(id(t)), str(id(fn)), dir="none")
-                if (t):
+                if t is not None:
                     t_name = get_var_name(t)
                 else:
                     t_name = 'None'
